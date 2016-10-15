@@ -3,4 +3,4 @@ Introduction To Programming With Java And Object-Oriented Programming
 
 Table of Contents
 ------------------
-* Lecture 13 - Dealing with files
+* Lecture 13 - Files

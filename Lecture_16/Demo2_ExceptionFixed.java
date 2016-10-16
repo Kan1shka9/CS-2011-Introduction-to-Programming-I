@@ -23,7 +23,9 @@ public class Demo2_ExceptionFixed {
 
 		catch (ArithmeticException ex) {
 			System.out.println(ex.getMessage());
-		} finally {
+		} 
+		
+		finally {
 			input.close();
 		}
 		System.out.println("festivities continue without a crash!");

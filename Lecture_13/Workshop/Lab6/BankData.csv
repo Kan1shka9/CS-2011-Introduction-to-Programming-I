@@ -1,0 +1,4 @@
+accountId,branchName,applicantsName,accountType,accountNumber,balance,emailId,zipCode
+1,LA,John,Savings,11111,15000,john@zxc.com,12345,
+2,LV,Doe,Current,22222,16000,doe@asd.com,45678,
+3,Boston,Jane,Savings,33333,17000,jane@poi.com,74123,

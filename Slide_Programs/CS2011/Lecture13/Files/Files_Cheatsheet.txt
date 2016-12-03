@@ -1,0 +1,144 @@
+1.) Read file
+public static void main(String[] args) throws IOException {
+		
+		System.out.println("Enter a filepath to read from ");
+		Scanner in = new Scanner(System.in);
+		
+		File file = new File(in.next());
+
+		Scanner reader = new Scanner(file);
+		
+		while (reader.hasNext()) {
+			String fname = reader.next();
+			String mname = reader.next();
+			String lname = reader.next();
+			int score = reader.nextInt();
+			System.out.println(fname + " " + mname + " " + lname + " " + score);
+		}
+
+		reader.close();
+
+}
+
+2.) Read file - CSV
+public void readFile() throws IOException {
+		try {
+			System.out.println("Enter a filepath to read from ");
+			Scanner in = new Scanner(System.in);
+			
+			File inFile = new File(in.next());
+			
+			Scanner reader = new Scanner(inFile);
+			
+			reader.nextLine(); 
+
+			String line;
+			String[] fields;
+			String name;
+			double grade;
+			
+			while (reader.hasNextLine()) {
+				line = reader.nextLine();
+				fields = line.split(",");
+				name = fields[0];
+				grade = Double.parseDouble(fields[1]);
+				students.add(new Lect4Student(name, grade));
+			}
+			
+			reader.close(); 
+			in.close();
+		} 
+		catch (IOException e) {
+			System.err.println(e);
+			System.exit(1);
+		}
+		
+}
+
+PrintWriter Vs FileWriter
+http://stackoverflow.com/questions/5759925/printwriter-vs-filewriter-in-java
+
+3.) Write file
+public static void main(String[] args) throws IOException {
+		
+		System.out.println("Enter a filepath to read from ");
+		Scanner in = new Scanner(System.in);
+				
+		File file = new File(in.next());
+		
+		if (file.exists()) {
+			System.out.println("File exists");
+			System.exit(1);
+		}
+		
+		PrintWriter writer = new PrintWriter(file);
+		
+		writer.print("John Smith ");
+		writer.println("100");
+		writer.print("Eric Jones ");
+		writer.println("80");
+		
+		writer.close();
+		
+}
+
+4.) Write file - CSV
+public static void main(String[] args) throws IOException {
+		
+		System.out.println("Enter a filepath to read from ");
+		Scanner in = new Scanner(System.in);
+				
+		File file = new File(in.next());
+		
+		PrintWriter writer = new PrintWriter(file);
+		
+		writer.print("John Smith");
+		writer.print(",");
+		writer.println("100");
+		writer.print("Eric Jones");
+		writer.print(",");
+		writer.println("80");
+		
+		writer.close();
+		
+}
+
+5.) File copy
+public class TextFileCopier {
+
+	public static void main(String[] args) {
+	
+		System.out.println("Enter a filepath to copy from, and one to copy to.");
+		Scanner in = new Scanner(System.in);
+
+		File inFile = new File(in.next()); 
+		File outFile = new File(in.next());
+
+		try {
+			copyFile(inFile, outFile);
+
+		} catch (IOException e) {
+			System.err.println(e);
+			System.exit(1);
+		}
+		in.close();
+	}
+
+	public static void copyFile(File fromFile, File toFile) throws IOException {
+
+		Scanner reader = new Scanner(fromFile);
+
+		BufferedWriter writer = new BufferedWriter(new FileWriter(toFile));
+
+		String line = null;
+		while (reader.hasNextLine()) {
+			line = reader.nextLine();
+			writer.write(line);
+			writer.newLine();
+		}
+
+		reader.close();
+		writer.close();
+	}
+
+}

@@ -1,0 +1,5 @@
+Earlier we discussed how to write to a file using FileOutputStream. 
+In this tutorial we will see how to write to a file using BufferedWriter. 
+We will be using write() method of BufferedWriter to write the text into a file. 
+The advantage of using BufferedWriter is that it writes text to a character-output stream, buffering characters 
+so as to provide for the efficient writing (better performance) of single characters, arrays, and strings.

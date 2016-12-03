@@ -1,0 +1,34 @@
+File class is a wrapper class for the file name and its directory path.
+
+1.) What is wrong about creating a File object using the following statement?
+new File("c:\book\test.dat");
+Ans.)
+The \ is a special character. It should be written as \\ in Java using the Escape sequence.
+new File("c:\\book\\test.dat");
+
+2.) How do you check whether a file already exists? How do you delete a file? How do you rename a file? Can you find the file size (the number of bytes) using the File class? How do you create a directory?
+Ans.)
+obj.exists();
+obj.delete();
+
+obj.renameTo();
+File file = new File("C:\\map.txt");
+File newName = new File("C:\\map2.txt");
+System.out.println("renaming the file " + file.renameTo(newName));
+
+file.length();
+
+Create a new directory
+File dir = new File("C:\\Users\\Kanishka\\workspace\\Liang\\src\\Chapter_12\\samplefolder\\new_dir");
+dir.mkdirs();
+
+3.) Can you use the File class for I/O? Does creating a File object create a file on the disk?
+No. The File class can be used to obtain file properties and manipulate files, but cannot perform I/O.
+No it doesn't create a file on the system.
+
+File I/O
+Scanner class -> read text from a file
+PrintWriter class -> write text to a file
+
+Token-reading methods
+nextByte(), nextShort(), nextInt(), nextLong(), nextFloat(), nextDouble(), and next() methods

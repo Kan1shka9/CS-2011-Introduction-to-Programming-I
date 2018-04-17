@@ -1,4 +1,4 @@
-# CS-2011-Introduction-to-Programming-I
+# ☕ CS-2011-Introduction-to-Programming-I
 Introduction To Programming With Java And Object-Oriented Programming
 
 Table of Contents
